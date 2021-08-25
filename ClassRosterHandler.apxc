@@ -1,0 +1,17 @@
+public class ClassRosterHandler {
+    public static void createCoachesTask(List<ClassRoster__c> listClassRoster){
+        
+        List<Task> newTask = new List<Task>();
+        
+        for (ClassRoster__c newClassR : listClassRoster)
+        {
+            newTask.add(new Task(Subject='New Atlete: Id - ' + newClassR.Athlete__c, WhatId = newClassr.ClassId__c));
+        }
+        // Insert Tasks for the Coaches/Instructors
+        Insert newTask;           
+    }
+    
+    //   public static void validateUserUnique(List<ClassRoster__c> listClassRoster){
+    
+    //         }
+}
