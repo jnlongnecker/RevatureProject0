@@ -1,0 +1,16 @@
+@isTest
+public class testDeleteAClassAssigned {
+    @isTest static void test_TP(){
+        
+        List<Classes__c> listClasses = new List<Classes__c>();
+        
+        //Create only One Class for each Type
+        listClasses = createDataTest.createClassAssigned(1);   
+        
+        // Valida el update sea realizado correctamente
+        
+        //System.assertEquals('Cannot delete Classes with Classes already assigned to an Instructor or Coach.',
+        //result.getErrors()[0].getMessage());
+    }
+}
+
