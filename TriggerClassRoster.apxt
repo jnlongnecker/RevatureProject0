@@ -1,20 +1,21 @@
-trigger TriggerClassRoster on ClassRoster__c (after insert, after update, after delete, after undelete, before insert, 
-                                              before update, before delete) 
+trigger TriggerClassRoster on ClassRoster__c (after insert, after update, after delete, after undelete, 
+                                              before insert, before update, before delete) 
 {
     if (trigger.isAfter){       
         if (trigger.isInsert){
             //// Create a task for a Instructor/Coach Notifying a New Athlete
             ClassRosterHandler.createCoachesTask(trigger.New);
         }
+        /*
         if (trigger.isUpdate){
             
         }
         if (trigger.isDelete){
             
-        }
+        }*/
     }
     else if (trigger.isBefore)
-    {        
+    {   /*     
         if (trigger.isInsert){
             
         }
@@ -26,6 +27,6 @@ trigger TriggerClassRoster on ClassRoster__c (after insert, after update, after 
         }
         if (trigger.isUndelete){
             
-        }
+        }*/
     }
 }
