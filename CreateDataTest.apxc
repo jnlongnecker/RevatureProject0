@@ -1,0 +1,73 @@
+@isTest
+public class CreateDataTest {
+    public static List<Classes__c> createClassAssigned(Integer numClasses){    
+        List<Classes__c> listClasses = new List<Classes__c>();
+        return listClasses;
+        
+    }
+    
+    public static List<Classes__c> createClass(Integer numClasses){
+        
+        List<Classes__c> listClasses = new List<Classes__c>();
+        
+        // Data must be created with the Information
+        for (Integer i=0; i <= numClasses; i++){
+            listClasses.add(new Classes__c(Classname__c = 'Test Preschool ' + i, classType__c ='Preschool',
+                                           ClassDay__c='Tuesday', ClassStartDate__c=Date.newInstance(2020,8,31),
+                                           ClassEndDate__c=Date.newInstance(2020,8,31),
+                                           ClassMinAge__c=2, MaxAge__c = 5)); 
+            listClasses.add(new Classes__c(Classname__c = 'Test Basic ' + i, classType__c ='Basic',
+                                           ClassDay__c='Tuesday', ClassStartDate__c=Date.newInstance(2020,8,31),
+                                           ClassEndDate__c=Date.newInstance(2020,8,31),
+                                           ClassMinAge__c=6, MaxAge__c = 9)); 
+            listClasses.add(new Classes__c(Classname__c = 'Test Intermediate ' + i, classType__c ='Intermediate',
+                                           ClassDay__c='Tuesday', ClassStartDate__c=Date.newInstance(2020,8,31),
+                                           ClassEndDate__c=Date.newInstance(2020,8,31),
+                                           ClassMinAge__c=8, MaxAge__c = 13));  
+            listClasses.add(new Classes__c(Classname__c = 'Test Advanced ' + i, classType__c ='Advanced',
+                                           ClassDay__c='Tuesday', ClassStartDate__c=Date.newInstance(2020,8,31),
+                                           ClassEndDate__c=Date.newInstance(2020,8,31),
+                                           ClassMinAge__c=10, MaxAge__c = 16)); 
+            listClasses.add(new Classes__c(Classname__c = 'Test Team ' + i, classType__c ='Team',
+                                           ClassDay__c='Tuesday', ClassStartDate__c=Date.newInstance(2020,8,31),
+                                           ClassEndDate__c=Date.newInstance(2020,8,31),
+                                           ClassMinAge__c=8, MaxAge__c = 18)); 
+        }
+        
+        Insert listClasses;
+        
+        return listClasses;
+    }
+    
+    public static List<Classes__c> createWrongData(Integer numClasses){
+        List<Classes__c> listClasses = new List<Classes__c>();
+        
+        // Data must be created with the Information
+        for (Integer i=0; i <= numClasses; i++){
+            listClasses.add(new Classes__c(Classname__c = 'Test Preschool ' + i, classType__c ='Preschool',
+                                           ClassDay__c='Tuesday', ClassStartDate__c=Date.newInstance(2020,8,31),
+                                           ClassEndDate__c=Date.newInstance(2020,8,31),
+                                           ClassMinAge__c=0, MaxAge__c = 0)); 
+            listClasses.add(new Classes__c(Classname__c = 'Test Basic ' + i, classType__c ='Basic',
+                                           ClassDay__c='Tuesday', ClassStartDate__c=Date.newInstance(2020,8,31),
+                                           ClassEndDate__c=Date.newInstance(2020,8,31),
+                                           ClassMinAge__c=0, MaxAge__c = 0)); 
+            listClasses.add(new Classes__c(Classname__c = 'Test Intermediate ' + i, classType__c ='Intermediate',
+                                           ClassDay__c='Tuesday', ClassStartDate__c=Date.newInstance(2020,8,31),
+                                           ClassEndDate__c=Date.newInstance(2020,8,31),
+                                           ClassMinAge__c=0, MaxAge__c = 0));  
+            listClasses.add(new Classes__c(Classname__c = 'Test Advanced ' + i, classType__c ='Advanced',
+                                           ClassDay__c='Tuesday', ClassStartDate__c=Date.newInstance(2020,8,31),
+                                           ClassEndDate__c=Date.newInstance(2020,8,31),
+                                           ClassMinAge__c=0, MaxAge__c = 0)); 
+            listClasses.add(new Classes__c(Classname__c = 'Test Team ' + i, classType__c ='Team',
+                                           ClassDay__c='Tuesday', ClassStartDate__c=Date.newInstance(2020,8,31),
+                                           ClassEndDate__c=Date.newInstance(2020,8,31),
+                                           ClassMinAge__c=0, MaxAge__c = 0)); 
+        }
+        
+        Insert listClasses;
+        
+        return listClasses;
+    }    
+}
