@@ -1,0 +1,38 @@
+@isTest
+public class testMinMaxAgesClasses {
+    @isTest static void test_TP(){
+        
+        Double correctMin;
+        List<Classes__c> listClasses = new List<Classes__c>();
+        
+        //Create only One Class for each Type
+        listClasses = createDataTest.CreateClass(1);            
+        
+        // Valida el update sea realizado correctamente
+        for (Integer i=0;i < listClasses.size();i++){
+            //Check the Min Age
+            Classes__c auxClass = listClasses[i];
+            system.debug(auxClass);
+            correctMin = VerifyMinMaxClasses.CheckMin(auxClass.ClassType__c);
+            System.assertEquals(correctMin, auxClass.ClassMinAge__c);
+        }
+    }
+    
+    @isTest static void test_TN(){
+        
+        Double correctMin;
+        List<Classes__c> listClasses = new List<Classes__c>();
+        
+        //Create only One Class for each Type
+        listClasses = createDataTest.CreateWrongData(1);            
+        
+        // Valida el update sea realizado correctamente
+        for (Integer i=0;i < listClasses.size();i++){
+            //Check the Min Age
+            Classes__c auxClass = listClasses[i];
+            system.debug(auxClass);
+            correctMin = VerifyMinMaxClasses.CheckMin(auxClass.ClassType__c);
+            System.assertNotEquals(correctMin, auxClass.ClassMinAge__c);
+        }
+    }
+}
