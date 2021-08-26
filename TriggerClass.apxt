@@ -1,13 +1,15 @@
 trigger TriggerClass on Classes__c (after insert, after update, after delete, after undelete, before insert, 
                                     before update, before delete) 
 {
-    if (trigger.isAfter){       
+    if (trigger.isAfter){     
+        /*
         if (trigger.isInsert){
         }
         if (trigger.isUpdate){
         }
         if (trigger.isDelete){
         }
+		*/
     }
     else if (trigger.isBefore)
     {  
@@ -16,23 +18,15 @@ trigger TriggerClass on Classes__c (after insert, after update, after delete, af
             ClassHandler.ChangeAges(Trigger.New);
         } 
         
-        if (trigger.isUpdate){
+        /*if (trigger.isUpdate){
             // Change the Min and Max Age of the Class
-            ClassHandler.ChangeAges(Trigger.New);            
+            //ClassHandler.ChangeAges(Trigger.New);            
         }
         if (trigger.isDelete){
-            // A Class can not be deleted if has a Assigned Class        
-            // ClassHandler.StopDeleteClass(Trigger.old, Trigger.oldMap);       
-            
-            for (Classes__c classesAux : [SELECT Id FROM Classes__c 
-                                       WHERE Id IN (SELECT ClassNameAssigned__c FROM ClassAssignment__c) 
-                                       AND Id IN :Trigger.old])
-            {            
-                Trigger.oldMap.get(classesAux.Id).addError('Cannot delete Classes with Classes already assigned.');                              
-            }
+            ClassHandler.StopDeleteClass(Trigger.old, Trigger.oldMap);       
         }
         if (trigger.isUndelete){
             
-        }
+        }*/
     }
 }
