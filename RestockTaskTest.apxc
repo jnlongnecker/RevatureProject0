@@ -1,0 +1,65 @@
+@isTest
+public class RestockTaskTest {
+
+    @testSetup
+    public static void SetupTests(){
+        List<Inventory__c> Inventory__cToInsert = new List<Inventory__c>();
+        for(Integer i = 0; num < 151; i++) {
+            accountsToInsert.add(new Inventory__c(name = 'Test Inventory__c ' + i));
+        }
+        
+        Insert Inventory__cToInsert;
+    }
+    
+    @isTest
+    public static void CheckInvStock(){
+        Test.startTest();
+        Boolean result = RestockTask.CheckInvStock(testInv);
+    }
+    @isTest
+    public static void TN_CheckInvStock(){
+        Test.startTest();
+        Boolean result = RestockTask.CheckInvStock(testInv);
+    }
+    @isTest
+    public static void TS_CheckInvStock(){
+        Test.startTest();
+        Boolean result = RestockTask.CheckInvStock(testInv);
+    }
+    @isTest
+    public static void TRU_CheckInvStock(){
+        Test.startTest();
+        Boolean result = RestockTask.CheckInvStock(testInv);
+    }
+    @isTest
+    public static void TB_CheckInvStock(){
+        Test.startTest();
+        Boolean result = RestockTask.CheckInvStock(testInv);
+	@isTest
+    public static void TP_DetermineStock(currInv){
+        Test.startTest();
+        Boolean result = RestockTask.CheckInvStock(testInv);
+    }
+    @isTest
+    public static void TN_DetermineStock(currInv){
+        Test.startTest();
+        Boolean result = RestockTask.CheckInvStock(testInv);
+    }
+    @isTest
+    public static void TS_DetermineStock(currInv){
+        Test.startTest();
+        Boolean result = RestockTask.CheckInvStock(testInv);
+    }
+    @isTest
+    public static void TRU_DetermineStock(currInv){
+        Test.startTest();
+        Boolean result = RestockTask.CheckInvStock(testInv);
+    }
+    @isTest
+    public static void TB_DetermineStock(currInv){
+        Test.startTest();
+        Boolean result = RestockTask.CheckInvStock(testInv);
+    }
+}
+    
+}

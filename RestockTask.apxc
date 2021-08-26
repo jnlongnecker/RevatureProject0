@@ -1,0 +1,37 @@
+//idea: determine if more stock of an item is needed and if so create task
+
+public class RestockTask {
+
+    //Make a list of inventories and their stock
+    public static void MakeInvList(){
+        List<Inventory__c> invList = [SELECT id, stockQuantity__c FROM Inventory__c];
+    }
+    
+    //Makes inventory list if not already and determines stock
+    public static void CheckInvStock(){
+        MakeInvList();
+        for (Inventory__c currInv : invList){
+            if(DetermineStock(currInv)){
+                CreateRestockTask(currInv);
+            } 
+        }
+    }
+    
+    //Determines if quanitity of a stock is less than 5 items.
+    public static Boolean DetermineStock(currInv){
+    	if(currInv.stockQuantity__c < 5){
+               return 1;
+            }
+        else return 0;
+        
+        
+        public static void CreateRestockTask(currInv){
+            task RestockTask = new Task();
+            t.WhatID = currInv.id;
+            t.OwnerID = currInv.ID;
+            t.Subject = 'Must restock this item';
+            t.Status = 'Needs completion'
+            t.Description = 'This item is out of stock and needs to be restocked.'
+            insert RestockTask;
+        }       
+}

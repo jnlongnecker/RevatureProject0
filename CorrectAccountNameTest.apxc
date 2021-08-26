@@ -1,0 +1,66 @@
+@isTest
+public class CorrectAccountNameTest {
+
+    @testSetup
+    public static void SetupTests(){
+        List<Account> AccountToInsert = new List<Account>();
+        for(Integer i = 0; num < 151; i++) {
+            accountsToInsert.add(new Account(name = 'Test Account ' + i));
+        }
+        
+        Insert AccountToInsert;
+    }
+    
+    @isTest
+    public static void TP_GetAccountList(){
+        Test.startTest();
+        Boolean result = CorrectAccoutName.GetAccountList(testAcc);
+    }
+    @isTest
+    public static void TN_GetAccountList(){
+        Test.startTest();
+        Boolean result = CorrectAccoutName.GetAccountList(testAcc);
+    }
+    @isTest
+    public static void TS_GetAccountList(){
+        Test.startTest();
+        Boolean result = CorrectAccoutName.GetAccountList(testAcc);
+    }
+    @isTest
+    public static void TRU_GetAccountList(){
+        Test.startTest();
+        Boolean result = CorrectAccoutName.GetAccountList(testAcc);
+    }
+    @isTest
+    public static void TB_GetAccountList(){
+        Test.startTest();
+        Boolean result = CorrectAccoutName.GetAccountList(testAcc);
+    }
+    
+    @isTest
+    TP_CompareAccountName(){
+        Test.startTest();
+        Boolean result = CorrectAccoutName.CompareAccountName(testAcc);
+    }
+    @isTest
+    TN_CompareAccountName(){
+        Test.startTest();
+        Boolean result = CorrectAccoutName.CompareAccountName(testAcc);
+    }
+    @isTest
+    TS_CompareAccountName(){
+        Test.startTest();
+        Boolean result = CorrectAccoutName.CompareAccountName(testAcc);
+    }
+    @isTest
+    TRU_CompareAccountName(){
+        Test.startTest();
+        Boolean result = CorrectAccoutName.CompareAccountName(testAcc);
+    }
+    @isTest
+    TB_CompareAccountName(){
+        Test.startTest();
+        Boolean result = CorrectAccoutName.CompareAccountName(testAcc);
+    }
+    
+}

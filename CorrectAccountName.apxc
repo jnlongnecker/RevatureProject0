@@ -1,0 +1,27 @@
+//Create a case after incorrect name spelling detected from account names
+
+public class CorrectAccountName {
+    
+	//Get a list of all accounts with names
+    public static void GetAccountList(){
+    List<Account> myAccounts = [SELECT Id, Name FROM Account WHERE Id =: actIds];
+        }
+    
+    //Compare Account names with common typos and mispellings of part manufacturer names
+    public static void CompareAccountName(){
+        GetAccountList();
+        List<String> incorrectNames = New List<String>('Frod','Forr','Fita','Fait','Hnoda','Honad','Nisan','Nissna','Mcihelin');
+			For(Integer i = 0; i < myAccounts.size(); i++){
+                For(Integer i = 0; i < incorrectNames.size()){
+                
+                //If a common account name is spelled wrong then a case is created
+                    if(accountNames.get(i) == incorrectNamees.get(i){
+                        Case caseObj = new Case
+                        AccountId = myAccounts.get(i)
+                        Status = 'Incorrect name',
+                        Origin = 'Typo on account name');
+                        insert caseObj;
+			}
+		}
+	}
+}

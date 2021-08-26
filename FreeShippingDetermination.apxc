@@ -1,0 +1,48 @@
+public class FreeShippingDetermination {
+    
+    //get a map of orders with order IDs, date ordered, and FreeShipping status
+    //check if it is 5th order from 
+    //check if order already has freeshipping
+    
+    
+    //Get a list and map of orders with order IDs, date ordered, and FreeShipping status
+    public static void GetContactsWithOrders() {
+        List<Order> myOrders = [SELECT id, EffectiveDate, BillToContactId, FreeShipping__c FROM Order ORDER BY EffectiveDate ASC];
+        List<Contact> myContacts = [SELECT id FROM Contact];
+        
+        Map<Order, List<Contact>> myOrderMap = new Map<Order, List<Contact>>();
+        for (Order currOrder : myOrders){
+            myOrderMap.put(currOrder, currOrder.BillToContactID);
+        }
+                                 
+ }
+    
+    //check if it is 5th order from customer
+    public static void CheckIfFifthOrder(){
+        //Get order count, loop through orders, and determine FreeShipping__c status
+        AggregateResult myCount = [SELECT COUNT(id) numOrder FROM ORDER];
+        for (Order currOrder : myOrders){
+        for (AggregateResult ar : myCount)  {
+            if(mod(myCount, 5)){
+                if(CheckFreeShipping(i)){
+                    GiveFreeShipping(currOrder)
+                }
+                else System.debug('Not qualified for free shipping');
+            }
+		}
+    }
+    
+    
+    //Check if order already has freeshipping
+    public static Boolean CheckFreeShipping(Integer idPosition){
+        for (Order currOrder : myOrders){
+        if {(currOrder.get(idPosition)) == 1}
+        return 1;
+        else return 0;
+    }
+    
+    //Give freeshipping to order
+    public static void GiveFreeShipping(Order){
+            Order.FreeShipping__c = 'Yes'
+        }    
+}                             

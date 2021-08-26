@@ -1,0 +1,106 @@
+@isTest
+public class FreeShippingTest {
+
+    @testSetup
+    public static void SetupTests(){
+        List<Order> ordersToInsert = new List<Order>();
+        for(Integer i = 0; num < 151; i++) {
+            accountsToInsert.add(new Order(name = 'Test Order ' + i));
+        }
+        
+        Insert ordersToInsert;
+    }
+    
+    @isTest
+    public static void TP_GetContactsWithOrders(){
+        Test.startTest();
+        Order testOrder = OrderTestHelper.CreateOrders(1)[0];
+        Boolean result = FreeShippingDetermination.CheckFreeShipping(testOrder);
+    }
+    @isTest
+    public static void TN_GetContactsWithOrders(){
+        Test.startTest();
+        Order testOrder = OrderTestHelper.CreateOrders(1)[0];
+        Boolean result = FreeShippingDetermination.CheckFreeShipping(testOrder);
+    }
+    @isTest
+    public static void TS_GetContactsWithOrders(){
+        Test.startTest();
+        Order testOrder = OrderTestHelper.CreateOrders(1)[0];
+        Boolean result = FreeShippingDetermination.CheckFreeShipping(testOrder);
+    }
+    @isTest
+    public static void TRU_GetContactsWithOrders(){
+        Test.startTest();
+        Order testOrder = OrderTestHelper.CreateOrders(1)[0];
+        Boolean result = FreeShippingDetermination.CheckFreeShipping(testOrder);
+    }
+    @isTest
+    public static void TB_GetContactsWithOrders(){
+        Test.startTest();
+        Order testOrder = OrderTestHelper.CreateOrders(1)[0];
+        Boolean result = FreeShippingDetermination.CheckFreeShipping(testOrder);
+    }
+    @isTest    
+    public static void TP_CheckIfFifthOrder(){
+        Test.startTest();
+        Order testOrder = OrderTestHelper.CreateOrders(1)[0];
+        Boolean result = FreeShippingDetermination.CheckifFitfthOrder(testOrder);
+    }
+    @isTest
+    public static void TN_CheckIfFifthOrder(){
+        Test.startTest();
+        Order testOrder = OrderTestHelper.CreateOrders(1)[0];
+        Boolean result = FreeShippingDetermination.CheckifFitfthOrder(testOrder)
+            }
+    @isTest
+    public static void TS_CheckIfFifthOrder(){
+        Test.startTest();
+        Order testOrder = OrderTestHelper.CreateOrders(1)[0];
+        Boolean result = FreeShippingDetermination.CheckifFitfthOrder(testOrder)
+            }
+    @isTest
+    public static void TRU_CheckIfFifthOrder(){
+        Test.startTest();
+        Order testOrder = OrderTestHelper.CreateOrders(1)[0];
+        Boolean result = FreeShippingDetermination.CheckifFitfthOrder(testOrder)
+            }
+    @isTest
+    public static void TB_CheckIfFifthOrder(){
+        Test.startTest();
+        Order testOrder = OrderTestHelper.CreateOrders(5)[0];
+        Boolean result = FreeShippingDetermination.CheckifFitfthOrder(testOrder)
+            }
+    @isTest
+    public static Boolean TP_CheckFreeShipping(Integer idPosition){
+        Test.startTest();
+        Order testOrder = OrderTestHelper.CreateOrders(1)[0];
+        Boolean result = FreeShippingDetermination.CheckFreeShipping(testOrder)
+            }
+    @isTest
+    public static Boolean TN_CheckFreeShipping(Integer idPosition){
+        Test.startTest();
+        Order testOrder = OrderTestHelper.CreateOrders(1)[0];
+        Boolean result = FreeShippingDetermination.CheckFreeShipping(testOrder)
+    }
+    @isTest
+    public static Boolean TS_CheckFreeShipping(Integer idPosition){
+        Test.startTest();
+        Order testOrder = OrderTestHelper.CreateOrders(1)[0];
+        Boolean result = FreeShippingDetermination.CheckFreeShipping(testOrder)
+    }
+    @isTest
+    public static Boolean TRU_CheckFreeShipping(Integer idPosition){
+        Test.startTest();
+        Order testOrder = OrderTestHelper.CreateOrders(1)[0];
+        Boolean result = FreeShippingDetermination.CheckFreeShipping(testOrder)
+    }
+    @isTest
+    public static Boolean TB_CheckFreeShipping(Integer idPosition){
+        Test.startTest();
+        Order testOrder = OrderTestHelper.CreateOrders(1)[0];
+        Boolean result = FreeShippingDetermination.CheckFreeShipping(testOrder)
+    }
+    
+    
+}

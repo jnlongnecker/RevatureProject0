@@ -1,0 +1,14 @@
+@isTest
+public class OrderTestHelper {
+
+    // Make data without insert
+    public static List<Order> CreateOrders(Integer numOrders) {
+        List<Account> toReturn = new List<Order>();
+        
+        for(Integer num = 0; num < numOrders; num++) {
+            toReturn.add(new Order(name = 'Ord ' + num));
+        }
+        
+        return toReturn;
+    }
+}
