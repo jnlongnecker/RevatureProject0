@@ -1,39 +1,42 @@
 public class ClassHandler {
-    /*
-    public static void StopDeleteClass(List<Classes__c> listClassesToDelete){
-        
+    
+    public static void StopDeleteClass(List<Classes__c> listClassesToDelete, Map<Id, Classes__c> mapClasses){        
         // Stop delete process from Classes that has been Assigned to a Coach
-       
-    }*/
+        // A Class can not be deleted if has a Assigned Class        
+        
+        for (Classes__c classesAux : [SELECT Id FROM Classes__c 
+                                      WHERE Id IN (SELECT ClassNameAssigned__c FROM ClassAssignment__c) 
+                                      AND Id IN :listClassesToDelete])
+        {            
+            mapClasses.get(classesAux.Id).addError('Cannot delete Classes with Classes already assigned to an Instructor or Coach.');                              
+        }       
+    }
     
     public static void changeAges(List<Classes__c> listClasses){  
         for(Classes__c classesAux : listClasses) {
             // Next Logic to Implement in a List 
             // select id, toLabel(classType__c)  from Classes__c where toLabel(classType__c) = 'Team'
             // Each Type of Class has different Min-Max Ages Requirements
-            switch on classesAux.ClassType__c{
-                when 'Team' {
-                    classesAux.ClassMinAge__c = 8;
-                    classesAux.MaxAge__c = 18;                         
-                }
-                when 'Advanced' {
-                    classesAux.ClassMinAge__c = 10;
-                    classesAux.MaxAge__c = 16;                                                 
-                }
-                when 'Intermediate' {
-                    classesAux.ClassMinAge__c = 8;
-                    classesAux.MaxAge__c = 13;                                                 
-                }
-                when 'Basic' {
-                    classesAux.ClassMinAge__c = 6;
-                    classesAux.MaxAge__c = 9;                         
-                    
-                }
-                when 'Preschool' {
-                    classesAux.ClassMinAge__c = 2;
-                    classesAux.MaxAge__c = 5;                         
-                }                  
-            }    
+            if (classesAux.ClassType__c == 'Team'){
+                classesAux.ClassMinAge__c = 8;
+                classesAux.MaxAge__c = 18;                         
+            }
+            else if(classesAux.ClassType__c == 'Advanced'){
+                classesAux.ClassMinAge__c = 10;
+                classesAux.MaxAge__c = 16;                        
+            }
+            else if(classesAux.ClassType__c == 'Intermediate'){
+                classesAux.ClassMinAge__c = 8;
+                classesAux.MaxAge__c = 13;                         
+            }
+            else if(classesAux.ClassType__c == 'Basic'){
+                classesAux.ClassMinAge__c = 6;
+                classesAux.MaxAge__c = 9;                         
+            }
+            else if(classesAux.ClassType__c == 'Preschool'){
+                classesAux.ClassMinAge__c = 2;
+                classesAux.MaxAge__c = 5;                         
+            }
         }
     }
 }
