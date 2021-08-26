@@ -1,17 +1,18 @@
 public class ClassRosterHandler {
     public static void createCoachesTask(List<ClassRoster__c> listClassRoster){
-        
         List<Task> newTask = new List<Task>();
+        Date auxDueDate = Date.today() + 15;
         
         for (ClassRoster__c newClassR : listClassRoster)
         {
-            newTask.add(new Task(Subject='New Atlete: Id - ' + newClassR.Athlete__c, WhatId = newClassr.ClassId__c));
+            newTask.add(new Task(Subject='New Atlete: Id - ' + newClassR.Athlete__c, 
+                                  ActivityDate = auxDueDate));
         }
+        
         // Insert Tasks for the Coaches/Instructors
         Insert newTask;           
+        
+        //   public static void validateUserUnique(List<ClassRoster__c> listClassRoster){
+        //         }
     }
-    
-    //   public static void validateUserUnique(List<ClassRoster__c> listClassRoster){
-    
-    //         }
 }
