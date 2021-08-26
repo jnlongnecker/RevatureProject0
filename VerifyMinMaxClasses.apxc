@@ -1,0 +1,23 @@
+public class VerifyMinMaxClasses {
+    
+    //Method to Verify if type is Correct
+    public static Double CheckMin(String typeClass) {
+        Double min;
+        If (typeClass == 'Preschool'){
+            min = 2;
+        }
+        else if (typeClass == 'Basic'){
+            min = 6;
+        }
+        else if (typeClass == 'Intermediate'){
+            min = 8;
+        }
+        else if (typeClass == 'Advanced'){
+            min = 10;
+        }
+        else if (typeClass == 'Team'){
+            min = 8;
+        }       
+        return min;
+    }
+}
